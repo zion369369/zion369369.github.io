@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Junayed Alam - Growth Strategist & Technical Product Manager Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --text: #1e293b;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --card-bg: #f8fafc;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0369a1;
+      --badge-champion: #fef3c7;
+      --badge-champion-text: #92400e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.5;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    h1.name {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .headline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .contact-info a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2.section-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .skill-category {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      font-size: 11.5px;
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid #cbd5e1;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .tag.highlight {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-color: #bae6fd;
+      font-weight: 600;
+    }
+
+    /* Experience */
+    .job-item {
+      margin-bottom: 22px;
+    }
+    .job-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .job-role {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .job-company {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .job-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .job-desc {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+
+    .job-desc li {
+      font-size: 13.5px;
+      color: #334155;
+      margin-bottom: 5px;
+      line-height: 1.55;
+    }
+
+    .job-desc li strong {
+      color: var(--primary);
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .edu-degree {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .edu-school {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .edu-year {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* Awards */
+    .awards-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .award-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 12.5px;
+    }
+
+    .award-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .badge-gold {
+      background: var(--badge-champion);
+      color: var(--badge-champion-text);
+      border: 1px solid #fde68a;
+    }
+
+    .badge-silver {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }
+
+    .award-title {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .award-org {
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+      .no-print {
+        display: none !important;
+      }
+      h1.name {
+        font-size: 26px;
+      }
+      .job-desc li, .summary-text {
+        font-size: 12.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="toolbar no-print">
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/></svg>
+        Save / Print as PDF
+      </button>
+    </div>
+
+    <header>
+      <div class="header-top">
+        <div>
+          <h1 class="name">Md Junayed Alam</h1>
+          <div class="headline">Growth Strategist &amp; Technical Product Manager | Self-Taught Full Stack &amp; AI Engineer</div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <span>📍 Dhaka, Bangladesh</span>
+        <span>✉️ <a href="mailto:alamjunayed221@gmail.com">alamjunayed221@gmail.com</a></span>
+        <span>🌐 <a href="https://zion369369.github.io" target="_blank">zion369369.github.io (Portfolio)</a></span>
+        <span>💻 <a href="https://github.com/zion369369" target="_blank">github.com/zion369369</a></span>
+        <span>💼 <a href="https://apcexterminators.com/" target="_blank">apcexterminators.com</a></span>
+        <span>🚀 <a href="https://helloprompting.com" target="_blank">helloprompting.com</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Executive Summary</h2>
+      <p class="summary-text">
+        High-performing <strong>Growth Strategist</strong> and <strong>Self-Taught Full Stack &amp; AI Engineer</strong> with an interdisciplinary background combining Marketing &amp; Management Information Systems (BBA, North South University), Certified Supply Chain Analysis (ISCEA CSCA), and modern software engineering. Demonstrated ability to self-direct and build production-grade, 20K+ line multi-model AI architectures, while scaling revenue and qualified customer pipelines for North American and national enterprises using <strong>Google Ads, Google Business Profile (Local 3-Pack SEO), Google Analytics 4 (GA4), and GorillaDesk CRM</strong>. Highly recognized strategist with multiple national championship wins (CUET National Supply Chain, Cennovation, National Crisis Challenge) and global competition finals. Bridges deep technical execution with high-level corporate brand communication and commercial growth.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Technical Expertise, Research &amp; Growth Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-category">AI Engineering &amp; Multi-Model Systems</div>
+          <div class="skill-tags">
+            <span class="tag highlight">Multi-Model Orchestration</span>
+            <span class="tag highlight">Gemini 2.5 Flash / Pro</span>
+            <span class="tag">Grok / Claude / OpenAI</span>
+            <span class="tag">Agentic Workflows</span>
+            <span class="tag highlight">Prompt Intelligence Logic (PIL)</span>
+            <span class="tag">RAG Pipelines</span>
+            <span class="tag">Vector Search (pgvector, Pinecone)</span>
+            <span class="tag">Token &amp; Cost Optimization</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Full-Stack &amp; Cloud Architecture</div>
+          <div class="skill-tags">
+            <span class="tag highlight">TypeScript &amp; JavaScript</span>
+            <span class="tag highlight">Python &amp; Go</span>
+            <span class="tag">React &amp; Next.js</span>
+            <span class="tag">Node.js &amp; Express</span>
+            <span class="tag">PostgreSQL &amp; Supabase (RLS)</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker &amp; Vercel CI/CD</span>
+            <span class="tag highlight">Antigravity &amp; VS Code</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Applied Research &amp; System Design</div>
+          <div class="skill-tags">
+            <span class="tag highlight">Cognitive AI Architectures</span>
+            <span class="tag highlight">MetaOps (AIOps + CognitiveOps)</span>
+            <span class="tag">Inference Latency Reduction</span>
+            <span class="tag">Academic Search Pipelines</span>
+            <span class="tag">Operations Research (CSCA)</span>
+            <span class="tag">Empirical Supply Chain Analytics</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Performance Marketing &amp; Growth</div>
+          <div class="skill-tags">
+            <span class="tag highlight">Google Ads (Search &amp; Local)</span>
+            <span class="tag highlight">Google Business Profile (GBP)</span>
+            <span class="tag highlight">Local 3-Pack SEO</span>
+            <span class="tag">Conversion Rate Optimization (CRO)</span>
+            <span class="tag">CAC &amp; LTV Scaling</span>
+            <span class="tag">ROAS Optimization</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">MarTech, CRM &amp; Analytics</div>
+          <div class="skill-tags">
+            <span class="tag highlight">GorillaDesk CRM</span>
+            <span class="tag highlight">Google Analytics 4 (GA4)</span>
+            <span class="tag">Field Service Automation</span>
+            <span class="tag">Dispatch &amp; Invoicing Pipelines</span>
+            <span class="tag">Full-Funnel Attribution</span>
+            <span class="tag">Google Tag Manager</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Brand Strategy &amp; Market Intelligence</div>
+          <div class="skill-tags">
+            <span class="tag highlight">Competitor Intelligence</span>
+            <span class="tag highlight">Market Research &amp; Sizing</span>
+            <span class="tag">Brand Positioning</span>
+            <span class="tag">Corporate Communication</span>
+            <span class="tag">Pricing Elasticity</span>
+            <span class="tag">Crisis Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Growth Strategist</span> – <a href="https://apcexterminators.com/" target="_blank" class="job-company">APC Exterminators</a>
+            <span style="font-size: 13px; color: var(--muted);">(Winnipeg, Manitoba, Canada)</span>
+          </div>
+          <span class="job-date">July 2026 – Present</span>
+        </div>
+        <ul class="job-desc">
+          <li><strong>Full-Funnel Acquisition:</strong> Spearheaded digital customer acquisition and market penetration strategy across Winnipeg and Manitoba for high-value residential treatments and recurring commercial pest control contracts.</li>
+          <li><strong>Paid Search &amp; Local SEO:</strong> Orchestrated targeted <strong>Google Ads</strong> search campaigns and optimized <strong>Google Business Profile (GBP)</strong> to secure top ranking in the high-converting local 3-pack, drastically reducing Cost-Per-Acquisition (CPA) and increasing inbound calls.</li>
+          <li><strong>GorillaDesk CRM &amp; GA4 Integration:</strong> Integrated and managed <strong>GorillaDesk CRM</strong> alongside Google Analytics 4 (GA4) to track lead generation from initial click through scheduling, route dispatching, and recurring service billing.</li>
+          <li><strong>Competitor Analysis &amp; Pricing Optimization:</strong> Conducted comprehensive competitive benchmarking across top provincial pest control providers, restructuring tiered service plans to maximize adoption of quarterly recurring protection packages.</li>
+          <li><strong>Rapid Prototyping &amp; CRO:</strong> Leveraged <strong>Antigravity</strong> and <strong>VS Code</strong> to prototype, deploy, and A/B test high-conversion landing pages, optimizing lead capture workflows and trust architecture.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Co-Founder &amp; Product Manager / Brand Manager</span> – <a href="https://helloprompting.com" target="_blank" class="job-company">HelloPrompting</a>
+          </div>
+          <span class="job-date">2026</span>
+        </div>
+        <ul class="job-desc">
+          <li><strong>Brand Narrative &amp; Market Positioning:</strong> Formulated the overarching brand identity, value proposition, and corporate messaging for an AI Prompt Optimization copilot designed for ChatGPT, Claude, Gemini, and Grok.</li>
+          <li><strong>Product-Led Growth (PLG):</strong> Led user experience mapping and onboarding workflows, growing community adoption via targeted organic distribution across tech creators and developer channels.</li>
+          <li><strong>Roadmapping &amp; PRDs:</strong> Synthesized user feedback into structured product roadmaps and engineering deliverables, balancing rapid AI feature delivery with seamless cross-platform usability.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Full Stack Engineer</span> – <span class="job-company">HelloTech</span>
+            <span style="font-size: 13px; color: var(--muted);">(Client: <a href="https://www.vercbd.org" target="_blank" style="color: inherit;">VERC - Village Education Resource Center</a>)</span>
+          </div>
+          <span class="job-date">2026</span>
+        </div>
+        <ul class="job-desc">
+          <li><strong>Digital Platform Transformation:</strong> Led end-to-end website redesign and digital product architecture for VERC, a legacy national development organization serving Bangladesh since 1977.</li>
+          <li><strong>Executive &amp; Stakeholder Alignment:</strong> Coordinated cross-functional teams to translate complex organizational workflows into a structured information architecture covering 40+ branch networks, institutional research, career pipelines, and CSR/donor engagement.</li>
+          <li><strong>8-Mode AI Reasoning Ecosystem:</strong> Architected a multi-model cognitive engine (HGPT suite) integrating Gemini 2.5 Flash/Pro, Grok, and Open-Source LLMs with academic and live web search pipelines.</li>
+          <li><strong>Cost &amp; Latency Reduction:</strong> Implemented MetaOps automation, cutting API inference costs by <strong>35–60%</strong> ($4.3K annual savings) and reducing pipeline response latency by <strong>55%</strong> (1.7s &rarr; 0.76s).</li>
+          <li><strong>System Reliability &amp; Documentation:</strong> Authored 6 foundational technical specifications (2,189 lines) with a 4:1 code-to-doc ratio and implemented enterprise-grade Supabase RLS and OAuth2 security.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section>
+      <h2 class="section-title">Research Field &amp; Applied Innovations</h2>
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-role">Cognitive AI Systems, MetaOps &amp; Algorithmic Economics</span>
+          </div>
+          <span class="job-date">Applied Research &amp; Systems</span>
+        </div>
+        <ul class="job-desc">
+          <li><strong>Prompt Intelligence Logic (PIL) Framework:</strong> Formulated an advanced cognitive reasoning architecture embodying a cyclical <em>Observe &rarr; Understand &rarr; Act &rarr; Learn</em> paradigm. Implemented heterogeneous multi-model validation across Gemini 2.5 Flash/Pro, Grok, and Open-Source LLMs, authoring 6 foundational technical specifications (2,189 lines) maintaining an A+ system documentation grade.</li>
+          <li><strong>Inference Economics &amp; MetaOps Optimization:</strong> Researched algorithmic cost-performance frontiers in enterprise LLM deployment. Mathematically modeled token-window pruning, conditional execution, and pipeline consolidation, achieving a <strong>55% latency reduction</strong> (1.7s &rarr; 0.76s) and <strong>35–60% inference cost savings</strong> in production.</li>
+          <li><strong>Operations Research &amp; Service Logistics (CSCA):</strong> Applied quantitative supply chain principles and Management Information Systems (MIS) modeling to field service operations (GorillaDesk CRM), optimizing technician dispatch schedules, route fulfillment density, and churn mitigation heuristics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education &amp; Credentials</h2>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Bachelor of Business Administration (BBA) – Dual Major in MIS &amp; Marketing</div>
+          <div class="edu-school">North South University (NSU), Dhaka, Bangladesh</div>
+        </div>
+        <div class="edu-year">2019 – 2026</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Certified Supply Chain Analyst (CSCA)</div>
+          <div class="edu-school">ISCEA (International Supply Chain Education Alliance)</div>
+        </div>
+        <div class="edu-year">2023</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Honors &amp; National Competitions</h2>
+      <div class="awards-list">
+        <div class="award-card">
+          <span class="award-badge badge-gold">🏆 Champion</span>
+          <div class="award-title">National Supply Chain Competition</div>
+          <div class="award-org">CUET | 2025</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-gold">🏆 Champion</span>
+          <div class="award-title">Cennovation</div>
+          <div class="award-org">IUT | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-gold">🏆 Champion</span>
+          <div class="award-title">National Crisis Challenge</div>
+          <div class="award-org">JCI Dhaka Young | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🥈 Global Finalist (70% Scholarship)</span>
+          <div class="award-title">ISCEA Global Supply Chain Competition</div>
+          <div class="award-org">ISCEA Global Round | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🥈 First Runner-Up</span>
+          <div class="award-title">Hult Prize</div>
+          <div class="award-org">UIU | 2023/2024</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🥈 First Runner-Up</span>
+          <div class="award-title">National Mechanical Festival</div>
+          <div class="award-org">KUET | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🏅 90% Scholarship Recipient</span>
+          <div class="award-title">UPSTREAM 2.0</div>
+          <div class="award-org">Dhaka University | 2022</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🏅 Finalist</span>
+          <div class="award-title">Blockchain Olympiad Bangladesh</div>
+          <div class="award-org">UIU | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🏅 Finalist</span>
+          <div class="award-title">MindSparks</div>
+          <div class="award-org">AUST | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🏅 Finalist</span>
+          <div class="award-title">Esonace (EEE)</div>
+          <div class="award-org">IUT | 2023</div>
+        </div>
+        <div class="award-card">
+          <span class="award-badge badge-silver">🏅 Finalist</span>
+          <div class="award-title">Intra Ignite</div>
+          <div class="award-org">North South University | 2022</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

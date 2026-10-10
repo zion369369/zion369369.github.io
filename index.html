@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Md Junayed Alam">
+  <title>Md Junayed Alam | Growth Strategist, Self-Taught AI Architect &amp; Product Leader</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.14);
+      --primary: #ffffff;
+      --secondary: #94a3b8;
+      --accent-crimson: #f43f5e;
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --gold: #fbbf24;
+      --gold-bg: rgba(251, 191, 36, 0.1);
+      --gold-border: rgba(251, 191, 36, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-sphere-1 {
+      position: absolute;
+      top: -120px;
+      left: 15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(3, 7, 18, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-sphere-2 {
+      position: absolute;
+      top: 500px;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Container */
+    .shell {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.85);
+    }
+
+    .brand-logo {
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: rgba(244, 63, 94, 0.15);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .btn-nav {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
+      transition: all 0.2s ease !important;
+    }
+    .btn-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .pill-badge .dot {
+      width: 7px;
+      height: 7px;
+      background: #38bdf8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #38bdf8;
+    }
+
+    h1.hero-headline {
+      font-size: clamp(38px, 6vw, 62px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--secondary);
+      max-width: 780px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #030712;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 26px;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+    }
+    .btn-primary:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      border: 1px solid var(--card-border);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Stats Grid */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 60px 0;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(14px);
+      padding: 20px 18px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    h2.section-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      border-color: var(--card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f43f5e, #38bdf8);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .project-metrics {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #cbd5e1;
+      border-left: 3px solid var(--accent-cyan);
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tag-item {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      transition: gap 0.15s ease;
+    }
+    .project-link:hover {
+      gap: 10px;
+      color: #ffffff;
+    }
+
+    /* 10X Generative UI vs Figma Comparison Box */
+    .comparison-section {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(3, 7, 18, 0.95) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      backdrop-filter: blur(20px);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .comp-col {
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .comp-col.legacy {
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .comp-col.modern {
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.04);
+    }
+
+    .comp-title {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comp-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+
+    .comp-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    /* Trophy Room */
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .trophy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .trophy-card.gold {
+      border-color: var(--gold-border);
+      background: rgba(251, 191, 36, 0.04);
+    }
+
+    .trophy-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .trophy-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .badge-champion {
+      background: var(--gold-bg);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .badge-silver {
+      background: rgba(255, 255, 255, 0.06);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trophy-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .trophy-meta {
+      font-size: 12px;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .trophy-desc {
+      font-size: 12px;
+      color: var(--secondary);
+      line-height: 1.45;
+    }
+
+    /* GitHub Section */
+    .github-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .github-info h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .github-info p {
+      font-size: 14px;
+      color: var(--secondary);
+      max-width: 600px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 48px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-sphere-1"></div>
+  <div class="glow-sphere-2"></div>
+
+  <div class="shell">
+    
+    <!-- Navigation -->
+    <nav>
+      <a href="#" class="brand-logo">
+        <span>Md Junayed Alam</span>
+        <span class="brand-badge">Prodigy Profile</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Work &amp; Impact</a>
+        <a href="#comparisons">10x Design</a>
+        <a href="#trophies">National Trophies</a>
+        <a href="https://github.com/zion369369" target="_blank">GitHub</a>
+        <a href="./Md_Junayed_Alam_IPDC_Finance_Resume.pdf" target="_blank" class="btn-nav">Download CV (PDF)</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="pill-badge">
+        <span class="dot"></span>
+        <span>GROWTH STRATEGIST • SELF-TAUGHT AI ARCHITECT • BRAND LEADER</span>
+      </div>
+      
+      <h1 class="hero-headline">
+        Bridging High-Impact Business Strategy with <span class="gradient-text">Elite AI Engineering.</span>
+      </h1>
+      
+      <p class="hero-sub">
+        Dual-major in <strong>Marketing &amp; MIS (North South University)</strong> and <strong>ISCEA Certified Supply Chain Analyst</strong>. Self-taught software &amp; AI engineer who builds 20K+ LOC multi-model engines and scales full-funnel digital revenue. 3x National Competition Champion.
+      </p>
+
+      <div class="hero-cta">
+        <a href="./Md_Junayed_Alam_IPDC_Finance_Resume.pdf" target="_blank" class="btn-primary">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+          Download Executive Resume (PDF)
+        </a>
+        <a href="https://github.com/zion369369" target="_blank" class="btn-secondary">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Explore GitHub: zion369369
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ticker -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-number">3x</div>
+        <div class="stat-label">National Champion</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10x</div>
+        <div class="stat-label">Faster Design-to-Code Velocity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">55%</div>
+        <div class="stat-label">Production Latency Drop</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Branches Digital Architecture</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">60%</div>
+        <div class="stat-label">Inference Cost Savings</div>
+      </div>
+    </div>
+
+    <!-- Featured Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-eyebrow">Proven Execution</div>
+        <h2 class="section-title">High-Stakes Work &amp; Scaled Products</h2>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: APC Exterminators -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Growth Strategy &amp; MarTech</span>
+            <h3 class="project-title">APC Exterminators</h3>
+            <p class="project-desc">
+              Directing full-funnel customer acquisition for high-ticket residential and commercial pest management across Winnipeg &amp; Manitoba, Canada.
+            </p>
+            <div class="project-metrics">
+              🚀 Scaled qualified inbound lead generation via Google Ads, Local 3-Pack SEO &amp; Meta Ads; integrated GorillaDesk CRM with GA4 for end-to-end attribution.
+            </div>
+            <div class="tech-tags">
+              <span class="tag-item">Google Ads</span>
+              <span class="tag-item">Meta Ads</span>
+              <span class="tag-item">GorillaDesk CRM</span>
+              <span class="tag-item">Google Business Profile</span>
+              <span class="tag-item">GA4</span>
+              <span class="tag-item">Antigravity</span>
+            </div>
+          </div>
+          <a href="https://apcexterminators.com/" target="_blank" class="project-link">
+            Visit Live Platform &rarr;
+          </a>
+        </div>
+
+        <!-- Project 2: HelloPrompting -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Co-Founder &amp; Brand Leadership</span>
+            <h3 class="project-title">HelloPrompting</h3>
+            <p class="project-desc">
+              Architected the brand identity, corporate messaging, and product-led growth (PLG) for a cross-platform AI Prompt Optimization Copilot.
+            </p>
+            <div class="project-metrics">
+              ⚡ Multi-model copilot supporting ChatGPT, Claude, Gemini &amp; Grok. Automated creative copy generation and consumer sentiment tracking.
+            </div>
+            <div class="tech-tags">
+              <span class="tag-item">Brand Strategy</span>
+              <span class="tag-item">Prompt Engineering</span>
+              <span class="tag-item">Multi-Model LLMs</span>
+              <span class="tag-item">Figma / Canva</span>
+              <span class="tag-item">GTM Strategy</span>
+            </div>
+          </div>
+          <a href="https://helloprompting.com" target="_blank" class="project-link">
+            Visit Live Copilot &rarr;
+          </a>
+        </div>
+
+        <!-- Project 3: VERC Digital Transformation -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">Full-Stack Lead &amp; CSR Systems</span>
+            <h3 class="project-title">Village Education Resource Center (VERC)</h3>
+            <p class="project-desc">
+              Led complete institutional digital transformation for one of Bangladesh's premier national social development NGOs (operating since 1977).
+            </p>
+            <div class="project-metrics">
+              🏛️ Engineered 8-mode AI reasoning system (HGPT suite), cutting latency 55% and reducing inference costs by 35–60% across 40+ national branch networks.
+            </div>
+            <div class="tech-tags">
+              <span class="tag-item">TypeScript</span>
+              <span class="tag-item">Next.js</span>
+              <span class="tag-item">MetaOps</span>
+              <span class="tag-item">CSR Reporting</span>
+              <span class="tag-item">Supabase RLS</span>
+              <span class="tag-item">Vercel</span>
+            </div>
+          </div>
+          <a href="https://www.vercbd.org" target="_blank" class="project-link">
+            Visit Live Organization &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10X Generative UI vs Figma Comparison -->
+    <section id="comparisons">
+      <div class="comparison-section">
+        <div class="section-eyebrow">The Competitive Edge</div>
+        <h2 class="section-title">Why My Workflow is 10x More Efficient Than Figma</h2>
+        <p style="color: var(--secondary); max-width: 700px; margin-top: 8px; font-size: 14.5px;">
+          Traditional brand teams lose days in static Figma wireframes that disconnect during developer handoff. By pairing Google AI Studio with modern VS Code environments, I turn campaign ideas directly into live, pixel-perfect production assets.
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comp-col legacy">
+            <div class="comp-title" style="color: #f87171;">
+              <span>❌</span> The Slow Figma Way
+            </div>
+            <ul class="comp-list">
+              <li>⏳ 3 to 5 days drawing static vector art on canvas</li>
+              <li>⚠️ Friction and visual discrepancies during developer handoff</li>
+              <li>🛑 Cannot test real animations, responsiveness, or copy dynamically</li>
+              <li>🐌 Delayed marketing campaigns and bloated agency billing</li>
+            </ul>
+          </div>
+
+          <div class="comp-col modern">
+            <div class="comp-title" style="color: #34d399;">
+              <span>⚡</span> My Google AI Studio + VS Code Stack
+            </div>
+            <ul class="comp-list">
+              <li>🚀 Instant Generative UI rendering in real production code</li>
+              <li>✅ Exact, responsive, pixel-perfect layouts ready to deploy</li>
+              <li>🧪 Live A/B testing of headlines, CTA buttons, and user flows on day one</li>
+              <li>💰 Zero developer handoff friction — saves companies weeks and thousands in budget</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- National Championships Trophy Room -->
+    <section id="trophies">
+      <div class="section-header">
+        <div class="section-eyebrow">Battle-Tested Excellence</div>
+        <h2 class="section-title">The National Championship Trophy Room</h2>
+      </div>
+
+      <div class="trophy-grid">
+        <div class="trophy-card gold">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-name">National Crisis Challenge</div>
+          <div class="trophy-meta">JCI Dhaka Young | 2023</div>
+          <div class="trophy-desc">Ranked #1 in Bangladesh for high-stakes corporate PR crisis communication, executive decision-making, and reputation management.</div>
+        </div>
+
+        <div class="trophy-card gold">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-name">National Supply Chain Competition</div>
+          <div class="trophy-host trophy-meta">CUET | 2025</div>
+          <div class="trophy-desc">Ranked #1 nationally in operational budgeting, timeline management, vendor contracts, and logistics execution.</div>
+        </div>
+
+        <div class="trophy-card gold">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-name">Cennovation</div>
+          <div class="trophy-meta">IUT | 2023</div>
+          <div class="trophy-desc">National championship in business innovation, commercial feasibility, and financial brand positioning.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🥈 Global Finalist (70% Scholarship)</span>
+          <div class="trophy-name">ISCEA Global Supply Chain Olympiad</div>
+          <div class="trophy-meta">ISCEA Global Round | 2023</div>
+          <div class="trophy-desc">Represented Bangladesh on the international stage against elite global university delegations.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🥈 First Runner-Up</span>
+          <div class="trophy-name">Hult Prize</div>
+          <div class="trophy-meta">UIU | 2023/2024</div>
+          <div class="trophy-desc">Prestigious global social entrepreneurship and institutional CSR impact challenge.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🏅 90% Scholarship Recipient</span>
+          <div class="trophy-name">UPSTREAM 2.0</div>
+          <div class="trophy-meta">Dhaka University | 2022</div>
+          <div class="trophy-desc">Meritocratic scholarship recipient based on advanced corporate case strategy.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🥈 First Runner-Up</span>
+          <div class="trophy-name">National Mechanical Festival</div>
+          <div class="trophy-meta">KUET | 2023</div>
+          <div class="trophy-desc">Multidisciplinary engineering hackathon and rapid technical prototyping.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🏅 Finalist</span>
+          <div class="trophy-name">Blockchain Olympiad Bangladesh</div>
+          <div class="trophy-meta">UIU | 2023</div>
+          <div class="trophy-desc">Decentralized protocols and algorithmic financial systems architecture.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-silver">🏅 Finalist</span>
+          <div class="trophy-name">MindSparks &amp; Esonace</div>
+          <div class="trophy-meta">AUST &amp; IUT | 2023</div>
+          <div class="trophy-desc">Technical innovation, analytical problem-solving, and cross-functional case analysis.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Showcase Bar -->
+    <div class="github-section">
+      <div class="github-info">
+        <h3>💻 GitHub Codebase &amp; Open Architecture</h3>
+        <p>
+          Inspect real production codebases, multi-model AI reasoning frameworks, Prompt Intelligence Logic (PIL), and full-stack software systems on my official GitHub profile.
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/zion369369" target="_blank" class="btn-primary" style="background: #2563eb; color: #fff;">
+          Open GitHub @zion369369 &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p style="margin-bottom: 8px;">
+        Designed &amp; Engineered by <strong>Md Junayed Alam</strong> | Dhaka, Bangladesh
+      </p>
+      <p style="color: #64748b; font-size: 12px;">
+        ✉️ <a href="mailto:alamjunayed221@gmail.com">alamjunayed221@gmail.com</a> • 🔗 <a href="https://github.com/zion369369" target="_blank">github.com/zion369369</a> • 💼 <a href="https://apcexterminators.com/" target="_blank">apcexterminators.com</a> • 🚀 <a href="https://helloprompting.com" target="_blank">helloprompting.com</a>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

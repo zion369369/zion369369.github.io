@@ -604,8 +604,128 @@
       text-decoration: none;
       font-weight: 600;
     }
-    footer a:hover {
-      color: var(--google-blue);
+    /* ==========================================================================
+       SURPRISING SKILL MATRIX / PARADOX ENGINE STYLES
+       ========================================================================== */
+    .skills-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .skill-paradox-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .skill-paradox-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-active);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .skill-paradox-card.dimmed {
+      opacity: 0.2;
+      transform: scale(0.97);
+      filter: grayscale(0.8);
+      pointer-events: none;
+    }
+
+    .skill-paradox-card.highlighted {
+      border-color: var(--google-blue);
+      box-shadow: 0 0 25px rgba(66, 133, 244, 0.25);
+    }
+
+    .paradox-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .paradox-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .paradox-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .paradox-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+    }
+
+    .paradox-body {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .telemetry-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 9px 6px;
+      text-align: center;
+      gap: 4px;
+    }
+
+    .t-lbl {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .t-val {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 2px;
+    }
+
+    .lens-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lens-tab.active, .lens-tab:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
     }
   </style>
 </head>
@@ -631,6 +751,7 @@
       </a>
 
       <div class="nav-actions">
+        <a href="#skills" class="nav-link" style="color: var(--google-yellow);">⚡ Skill Paradox</a>
         <a href="#projects" class="nav-link">Flagship Work</a>
         <a href="#g-stack" class="nav-link">Google Stack</a>
         <a href="#trophies" class="nav-link">National Championships</a>
@@ -727,6 +848,188 @@
         <div class="metric-lbl">Branches Architecture</div>
       </div>
     </div>
+
+    <!-- SURPRISING SKILL MATRIX: THE 4-WAY HYBRID CONVERGENCE -->
+    <section id="skills" style="padding-top: 10px;">
+      <div class="section-head" style="text-align: center; max-width: 780px; margin: 0 auto 36px;">
+        <div class="section-tag" style="color: var(--google-yellow);">The Rare Hybrid Paradox</div>
+        <h2 class="section-heading" style="font-size: 34px;">
+          The "Unfair Advantage" Skill Matrix
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 14.5px; margin-top: 8px;">
+          Most enterprises hire 4 separate specialists: a Growth Marketer, an AI Systems Architect, a Corporate PR Crisis Lead, and a Quantitative Supply Chain Analyst. 
+          <strong style="color: #ffffff;">This matrix illustrates the compounding impact when all four disciplines converge in one mind.</strong>
+        </p>
+      </div>
+
+      <!-- Interactive Perspective Switcher (Dynamic State Engine) -->
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: 9999px; padding: 6px; display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; max-width: 720px; margin: 0 auto 32px;">
+        <button class="lens-tab active" onclick="switchLens('all')">🌐 Complete Matrix</button>
+        <button class="lens-tab" onclick="switchLens('cmo')">📢 CMO / Brand View</button>
+        <button class="lens-tab" onclick="switchLens('cto')">⚡ CTO / AI Lead View</button>
+        <button class="lens-tab" onclick="switchLens('growth')">📈 Head of Growth View</button>
+        <button class="lens-tab" onclick="switchLens('board')">🏛️ Executive Board View</button>
+      </div>
+
+      <!-- The 4 Convergence Pillars (Surprising Cards with Telemetry) -->
+      <div class="skills-matrix-grid">
+        <!-- Pillar 1 -->
+        <div class="skill-paradox-card" data-category="cto all">
+          <div>
+            <div class="paradox-header">
+              <span class="paradox-icon" style="background: rgba(66, 133, 244, 0.15); color: var(--google-blue);">🧠</span>
+              <div>
+                <div class="paradox-tag" style="color: var(--google-blue);">Engineering Paradox</div>
+                <h3 class="paradox-title">The Multimodal AI Architect</h3>
+              </div>
+            </div>
+            <p class="paradox-body">
+              Rather than merely prompt-engineering wrappers, builds production-grade cognitive AI systems. Engineered an 8-mode reasoning engine across Gemini 2.5 and Grok with 20K+ LOC typed TypeScript.
+            </p>
+          </div>
+          <div>
+            <div class="telemetry-bar">
+              <div class="telemetry-item">
+                <span class="t-lbl">Inference Latency</span>
+                <span class="t-val" style="color: #60a5fa;">0.76s (-55%)</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">API Cost Tuning</span>
+                <span class="t-val" style="color: #34d399;">-35% to -60%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">Code Integrity</span>
+                <span class="t-val" style="color: #a78bfa;">95% Typed</span>
+              </div>
+            </div>
+            <div class="chip-tags" style="margin-top: 14px; margin-bottom: 0;">
+              <span class="tag-pill">Gemini 2.5 Flash / Pro</span>
+              <span class="tag-pill">Google AI Studio</span>
+              <span class="tag-pill">PIL Framework</span>
+              <span class="tag-pill">MetaOps</span>
+              <span class="tag-pill">Supabase RLS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="skill-paradox-card" data-category="cmo all">
+          <div>
+            <div class="paradox-header">
+              <span class="paradox-icon" style="background: rgba(234, 67, 53, 0.15); color: var(--google-red);">🛡️</span>
+              <div>
+                <div class="paradox-tag" style="color: var(--google-red);">Communication Paradox</div>
+                <h3 class="paradox-title">The Battle-Tested PR &amp; Crisis Champion</h3>
+              </div>
+            </div>
+            <p class="paradox-body">
+              Engineers typically freeze during public corporate crises. Junayed is the <strong>National Crisis Challenge Champion (JCI 2023)</strong>, pressure-tested under live simulated corporate catastrophes.
+            </p>
+          </div>
+          <div>
+            <div class="telemetry-bar">
+              <div class="telemetry-item">
+                <span class="t-lbl">Crisis PR</span>
+                <span class="t-val" style="color: #f87171;">🏆 #1 National</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">CSR Outreach</span>
+                <span class="t-val" style="color: #fbbf24;">40+ Branches</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">Org Overhaul</span>
+                <span class="t-val" style="color: #34d399;">VERC (1977)</span>
+              </div>
+            </div>
+            <div class="chip-tags" style="margin-top: 14px; margin-bottom: 0;">
+              <span class="tag-pill">Crisis PR Strategy</span>
+              <span class="tag-pill">Corporate Storytelling</span>
+              <span class="tag-pill">CSR Impact Architecture</span>
+              <span class="tag-pill">Canva Media</span>
+              <span class="tag-pill">Brand Voice Guidelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="skill-paradox-card" data-category="growth all">
+          <div>
+            <div class="paradox-header">
+              <span class="paradox-icon" style="background: rgba(251, 188, 5, 0.15); color: var(--google-yellow);">⚡</span>
+              <div>
+                <div class="paradox-tag" style="color: var(--google-yellow);">Design Velocity Paradox</div>
+                <h3 class="paradox-title">The 10x Code-First Generative UI Pioneer</h3>
+              </div>
+            </div>
+            <p class="paradox-body">
+              Replaced slow, static 4-day Figma wireframe cycles with <strong>Google AI Studio + VS Code</strong>. Ships production-grade, interactive, pixel-perfect frontend experiences directly in code on Day 1.
+            </p>
+          </div>
+          <div>
+            <div class="telemetry-bar">
+              <div class="telemetry-item">
+                <span class="t-lbl">Design-to-Code</span>
+                <span class="t-val" style="color: #fbbf24;">10x Faster</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">Handoff Friction</span>
+                <span class="t-val" style="color: #34d399;">0% Lag</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">A/B Testing</span>
+                <span class="t-val" style="color: #60a5fa;">Same-Day</span>
+              </div>
+            </div>
+            <div class="chip-tags" style="margin-top: 14px; margin-bottom: 0;">
+              <span class="tag-pill">Google AI Studio</span>
+              <span class="tag-pill">Antigravity</span>
+              <span class="tag-pill">Tailwind CSS</span>
+              <span class="tag-pill">Next.js</span>
+              <span class="tag-pill">CRO Optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="skill-paradox-card" data-category="growth board all">
+          <div>
+            <div class="paradox-header">
+              <span class="paradox-icon" style="background: rgba(52, 168, 83, 0.15); color: var(--google-green);">📊</span>
+              <div>
+                <div class="paradox-tag" style="color: var(--google-green);">Commercial Paradox</div>
+                <h3 class="paradox-title">The Supply Chain Analyst &amp; Growth Lead</h3>
+              </div>
+            </div>
+            <p class="paradox-body">
+              Marries growth marketing with ISCEA Certified Supply Chain Analysis (CSCA) and North South University MIS/Marketing. Connects ad clicks directly to CRM dispatch, unit economics, and recurring LTV.
+            </p>
+          </div>
+          <div>
+            <div class="telemetry-bar">
+              <div class="telemetry-item">
+                <span class="t-lbl">CUET SCM</span>
+                <span class="t-val" style="color: #34d399;">🏆 #1 Champion</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">ISCEA Global</span>
+                <span class="t-val" style="color: #60a5fa;">Finalist (70%)</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="t-lbl">Local 3-Pack</span>
+                <span class="t-val" style="color: #fbbf24;">Top 3 Ranking</span>
+              </div>
+            </div>
+            <div class="chip-tags" style="margin-top: 14px; margin-bottom: 0;">
+              <span class="tag-pill">Google Ads</span>
+              <span class="tag-pill">Google Business Profile</span>
+              <span class="tag-pill">GorillaDesk CRM</span>
+              <span class="tag-pill">GA4 Attribution</span>
+              <span class="tag-pill">CSCA Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Flagship Work Section -->
     <section id="projects">
@@ -943,5 +1246,27 @@
 
   </div>
 
+  <script>
+    function switchLens(role) {
+      document.querySelectorAll('.lens-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      const cards = document.querySelectorAll('.skill-paradox-card');
+      cards.forEach(card => {
+        const cats = card.getAttribute('data-category');
+        if (role === 'all' || cats.includes(role)) {
+          card.classList.remove('dimmed');
+          if (role !== 'all') {
+            card.classList.add('highlighted');
+          } else {
+            card.classList.remove('highlighted');
+          }
+        } else {
+          card.classList.add('dimmed');
+          card.classList.remove('highlighted');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

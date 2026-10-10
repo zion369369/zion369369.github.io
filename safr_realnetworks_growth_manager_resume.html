@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Md Junayed Alam">
+  <title>Md Junayed Alam - Growth Marketing Manager | SAFR RealNetworks</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0a1128;
+      --secondary: #1c2541;
+      --safr-blue: #0052cc;
+      --safr-accent: #00b4d8;
+      --safr-light: #f0f7ff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --border: #e2e8f0;
+      --card-bg: #f8fafc;
+      --gold: #b45309;
+      --gold-bg: #fef3c7;
+      --gold-border: #fde68a;
+      --green-bg: #ecfdf5;
+      --green-text: #047857;
+      --green-border: #a7f3d0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @page {
+      size: letter portrait;
+      margin: 8mm 11mm 8mm 11mm;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 11px;
+      line-height: 1.44;
+      color: var(--text);
+      background-color: #f1f5f9;
+      padding: 24px 12px;
+    }
+
+    .resume-sheet {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 34px 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-top: 5px solid var(--safr-blue);
+    }
+
+    .no-print-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--safr-light);
+      color: var(--safr-blue);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .print-btn {
+      background: var(--safr-blue);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 82, 204, 0.25);
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .name-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    h1.full-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.025em;
+    }
+
+    .title-line {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--safr-blue);
+      margin-top: 2px;
+    }
+
+    .sub-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: 10.8px;
+      color: var(--text-muted);
+    }
+
+    .contact-row a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-row a:hover {
+      color: var(--safr-blue);
+    }
+
+    /* Executive Callout */
+    .safr-banner {
+      background: linear-gradient(135deg, #0a1128 0%, #1c2541 100%);
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 10.8px;
+      line-height: 1.52;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--safr-accent);
+    }
+
+    .safr-banner strong {
+      color: #7dd3fc;
+    }
+
+    /* Section Headings */
+    h2.section-header {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2.section-header::before {
+      content: "";
+      width: 3.5px;
+      height: 12px;
+      background: var(--safr-blue);
+      border-radius: 1px;
+    }
+
+    /* Competencies Grid */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .matrix-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 9px;
+    }
+
+    .matrix-title {
+      font-size: 10.8px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    .skill-tag {
+      font-size: 9.5px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 500;
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid #cbd5e1;
+      white-space: nowrap;
+    }
+
+    .skill-tag.hero {
+      background: var(--safr-light);
+      color: var(--safr-blue);
+      border-color: #bfdbfe;
+      font-weight: 700;
+    }
+
+    .skill-tag.ai {
+      background: var(--green-bg);
+      color: var(--green-text);
+      border-color: var(--green-border);
+      font-weight: 700;
+    }
+
+    /* Experience */
+    .job-block {
+      margin-bottom: 10px;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .role-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .company-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--safr-blue);
+      text-decoration: none;
+    }
+
+    .company-location {
+      font-size: 10px;
+      color: var(--text-subtle);
+    }
+
+    .tenure {
+      font-size: 10.8px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 16px;
+    }
+
+    .bullet-list li {
+      font-size: 10.8px;
+      color: #334155;
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+
+    .bullet-list li strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Page Break */
+    .page-break-divider {
+      page-break-after: always;
+      break-after: page;
+      height: 1px;
+    }
+
+    /* Education */
+    .credential-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .degree-name {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .institution-name {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Trophy Grid */
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .trophy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 6px 8px;
+    }
+
+    .trophy-card.gold-flag {
+      border-left: 3px solid #f59e0b;
+      background: #fffbeb;
+    }
+
+    .trophy-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+
+    .badge-champion {
+      background: var(--gold-bg);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .badge-runnerup {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }
+
+    .trophy-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    .trophy-host {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .trophy-desc {
+      font-size: 9px;
+      color: var(--text-subtle);
+      line-height: 1.35;
+      margin-top: 1px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        zoom: 0.94;
+      }
+      .resume-sheet {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        border-top: none;
+      }
+      .no-print-toolbar {
+        display: none !important;
+      }
+      .safr-banner {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1 !important;
+        border-left: 4px solid var(--safr-blue) !important;
+      }
+      .safr-banner strong {
+        color: var(--safr-blue) !important;
+      }
+      .page-break-divider {
+        page-break-after: always;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-sheet">
+    
+    <div class="no-print-toolbar">
+      <div class="role-badge">
+        🎯 Target Role: Growth Marketing Manager | SAFR from RealNetworks (Ref: Q2FN8RuW2F)
+      </div>
+      <button class="print-btn" onclick="window.print()">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/></svg>
+        Save / Print as PDF
+      </button>
+    </div>
+
+    <!-- PAGE 1 START -->
+    <header>
+      <div class="name-row">
+        <div>
+          <h1 class="full-name">Md Junayed Alam</h1>
+          <div class="title-line">Growth Marketing Manager | B2B SaaS Demand Generation &amp; AI-Native Architect</div>
+          <div class="sub-title">BBA in Marketing &amp; MIS (North South University) • Certified Supply Chain Analyst (CSCA, ISCEA) • Self-Taught AI Engineer</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span>📍 Dhaka, Bangladesh (Remote US-Aligned)</span>
+        <span>✉️ <a href="mailto:alamjunayed221@gmail.com">alamjunayed221@gmail.com</a></span>
+        <span>🌐 <a href="https://zion369369.github.io" target="_blank">zion369369.github.io (Portfolio)</a></span>
+        <span>💻 <a href="https://github.com/zion369369" target="_blank">github.com/zion369369</a></span>
+        <span>💼 <a href="https://apcexterminators.com/" target="_blank">apcexterminators.com</a></span>
+      </div>
+    </header>
+
+    <div class="safr-banner">
+      <strong>Executive Profile:</strong> Results-oriented, <strong>AI-native B2B Growth Marketing Manager</strong> with proven success driving qualified pipeline across multi-tiered retail and commercial account segments. Combines quantitative business training in <strong>Marketing &amp; MIS (NSU)</strong> with supply chain precision <strong>(ISCEA CSCA)</strong> and elite full-stack engineering. Demonstrated expertise building demand generation programs in lean environments without bloated agency spend—orchestrating multi-channel campaigns (Google Ads, Meta Ads, ABM, Webinars), sales/SDR cadence alignment, and closed-loop CRM attribution (HubSpot, GorillaDesk, GA4). Leverages <strong>Google AI Studio and generative AI tooling</strong> to accelerate campaign development velocity by 10x. 3x National Competition Champion.
+    </div>
+
+    <section>
+      <h2 class="section-header">Core Competencies Aligned with SAFR / RealNetworks</h2>
+      <div class="skills-matrix">
+        <div class="matrix-card">
+          <div class="matrix-title">🚀 Demand Gen &amp; Pipeline Growth</div>
+          <div class="tags-container">
+            <span class="skill-tag hero">Multi-Channel Demand Gen</span>
+            <span class="skill-tag hero">Account-Based Marketing (ABM)</span>
+            <span class="skill-tag">Webinar Planning &amp; Delivery</span>
+            <span class="skill-tag">MQL / SQL Pipeline Creation</span>
+            <span class="skill-tag">Retail Segment Targeting</span>
+            <span class="skill-tag">Nurture Journeys &amp; Sequences</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <div class="matrix-title">🤖 AI-Native Campaign Velocity</div>
+          <div class="tags-container">
+            <span class="skill-tag ai">Generative AI Marketing</span>
+            <span class="skill-tag ai">Google AI Studio &amp; VS Code</span>
+            <span class="skill-tag">10x Design-to-Code Prototyping</span>
+            <span class="skill-tag">Multimodal LLM Workflows</span>
+            <span class="skill-tag">Automated Copy Generation</span>
+            <span class="skill-tag">Prompt Intelligence Logic (PIL)</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <div class="matrix-title">⚙️ MarTech, RevOps &amp; Automation</div>
+          <div class="tags-container">
+            <span class="skill-tag hero">HubSpot &amp; Marketing Automation</span>
+            <span class="skill-tag">GorillaDesk CRM Routing</span>
+            <span class="skill-tag">Google Analytics 4 (GA4)</span>
+            <span class="skill-tag">UTM Tagging &amp; Lead Routing</span>
+            <span class="skill-tag">Closed-Loop Attribution</span>
+            <span class="skill-tag">Google Tag Manager</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <div class="matrix-title">🤝 Sales &amp; SDR Partnership</div>
+          <div class="tags-container">
+            <span class="skill-tag hero">SDR Outreach Alignment</span>
+            <span class="skill-tag">Sales Enablement Assets</span>
+            <span class="skill-tag">Target Account Prioritization</span>
+            <span class="skill-tag">National Crisis Champion (JCI)</span>
+            <span class="skill-tag">Executive Presentation</span>
+            <span class="skill-tag">Stakeholder Communications</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <div class="matrix-title">📊 Analytics &amp; Budget Optimization</div>
+          <div class="tags-container">
+            <span class="skill-tag hero">Influenced Revenue Tracking</span>
+            <span class="skill-tag">CAC / LTV Unit Economics</span>
+            <span class="skill-tag">Lean Budget Allocation</span>
+            <span class="skill-tag">CSCA Supply Chain Modeling</span>
+            <span class="skill-tag">A/B Testing &amp; CRO</span>
+            <span class="skill-tag">MS Office (Excel, PPT)</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <div class="matrix-title">🌐 Digital &amp; Content Architecture</div>
+          <div class="tags-container">
+            <span class="skill-tag hero">Google Ads (Search &amp; Local)</span>
+            <span class="skill-tag">Meta Ads Paid Campaigns</span>
+            <span class="skill-tag">Website CMS Management</span>
+            <span class="skill-tag">Canva &amp; Visual Direction</span>
+            <span class="skill-tag">Competitive Benchmarking</span>
+            <span class="skill-tag">Full-Stack Web Architecture</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-header">Professional Experience (Part I)</h2>
+
+      <!-- APC Exterminators -->
+      <div class="job-block">
+        <div class="job-head">
+          <div>
+            <span class="role-title">Growth Marketing Strategist &amp; Demand Lead</span> – <a href="https://apcexterminators.com/" target="_blank" class="company-name">APC Exterminators</a>
+            <span class="company-location">(Winnipeg, MB, Canada / Remote)</span>
+          </div>
+          <span class="tenure">July 2026 – Present</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Lean Multi-Channel Demand Generation:</strong> Built full-funnel acquisition programs targeting high-value commercial accounts (commercial facilities, retail chains, and property management networks) and residential segments in a lean environment without relying on bloated agency infrastructure.</li>
+          <li><strong>Pipeline Creation &amp; Paid Media:</strong> Deployed high-converting Google Ads and Meta Ads campaigns; optimized Google Business Profile to capture top 3-pack local rankings, creating consistent inbound pipeline while lowering Customer Acquisition Cost (CAC).</li>
+          <li><strong>10x AI-Native Campaign Velocity:</strong> Replaced slow, static wireframe handoffs by leveraging <strong>Google AI Studio and VS Code</strong> to generate production-ready landing pages and campaign assets <strong>10x faster than traditional Figma cycles</strong>, enabling same-day A/B testing of messaging and CTAs.</li>
+          <li><strong>Closed-Loop Attribution &amp; Automation:</strong> Integrated marketing automation with GorillaDesk CRM and Google Analytics 4 (GA4), establishing lead routing, UTM tagging, and end-to-end attribution from initial ad impression to signed service contract.</li>
+          <li><strong>SDR &amp; Sales Enablement:</strong> Partnered closely with sales and field reps to prioritize high-value commercial accounts, providing campaign briefs, prospect intelligence, and messaging playbooks for outbound follow-up.</li>
+        </ul>
+      </div>
+
+      <!-- HelloPrompting -->
+      <div class="job-block" style="margin-bottom: 0;">
+        <div class="job-head">
+          <div>
+            <span class="role-title">Co-Founder &amp; Head of Growth / Brand</span> – <a href="https://helloprompting.com" target="_blank" class="company-name">HelloPrompting</a>
+          </div>
+          <span class="tenure">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>B2B SaaS GTM &amp; Product-Led Growth:</strong> Architected go-to-market strategy, brand identity, and customer acquisition funnels for a cross-platform AI copilot serving enterprise and developer users across ChatGPT, Claude, Gemini, and Grok.</li>
+          <li><strong>Generative AI Campaign Acceleration:</strong> Deployed automated content pipelines leveraging multi-model LLMs to generate high-performing social copy, product explainers, and technical documentation at zero incremental agency cost.</li>
+          <li><strong>Nurture Journeys &amp; Funnel Optimization:</strong> Designed automated user onboarding flows and email nurture sequences, tracking cohort retention, activation benchmarks, and product referral loops.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PAGE BREAK -->
+    <div class="page-break-divider"></div>
+
+    <!-- PAGE 2 START -->
+    <section style="margin-top: 10px;">
+      <h2 class="section-header">Professional Experience (Part II)</h2>
+
+      <!-- HelloTech / VERC -->
+      <div class="job-block">
+        <div class="job-head">
+          <div>
+            <span class="role-title">Full-Stack Lead &amp; Technical Product Delivery</span> – <span class="company-name">HelloTech</span>
+            <span class="company-location">(Client: <a href="https://www.vercbd.org" target="_blank" style="color: inherit; text-decoration: underline;">VERC - Village Education Resource Center</a>)</span>
+          </div>
+          <span class="tenure">2026</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Institutional Digital Overhaul:</strong> Spearheaded the end-to-end digital redesign and website content management for VERC, a legacy national development organization serving Bangladesh across 40+ branch networks since 1977.</li>
+          <li><strong>Multi-Stakeholder GTM Execution:</strong> Aligned executive directors, regional branch heads, and technical teams to structure information architecture covering institutional programs, CSR impact reports, and enterprise donor engagement.</li>
+          <li><strong>8-Mode AI Multi-Model Architecture:</strong> Engineered a cognitive reasoning platform (HGPT suite) integrating Gemini 2.5 Flash/Pro and Grok APIs with real-time academic pipelines, reducing operational latency by <strong>55%</strong> (1.7s &rarr; 0.76s) and slashing inference costs by <strong>35–60%</strong>.</li>
+          <li><strong>Enterprise Documentation &amp; Reliability:</strong> Authored 2,189 lines of rigorous operational specifications maintaining an A+ grade, bridging non-technical executive leadership with engineering teams.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-header">Applied Research &amp; AI-Native Systems</h2>
+      <div class="job-block">
+        <ul class="bullet-list">
+          <li><strong>Prompt Intelligence Logic (PIL) Framework:</strong> Formulated an advanced cognitive reasoning framework (<em>Observe &rarr; Understand &rarr; Act &rarr; Learn</em>) implementing heterogeneous multi-model validation across Gemini 2.5 and open-source LLMs to automate research and campaign intelligence.</li>
+          <li><strong>Inference Economics &amp; MetaOps Optimization:</strong> Researched algorithmic cost-performance frontiers in enterprise LLM deployment, achieving mathematical cost optimization and real-time responsiveness.</li>
+          <li><strong>Quantitative Supply Chain Analytics (CSCA):</strong> Applied operations research and Information Systems (MIS) modeling to streamline marketing workflows, campaign budget allocation, and recurring customer churn prediction.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-header">Education &amp; Professional Credentials</h2>
+      <div class="credential-row">
+        <div>
+          <div class="degree-name">Bachelor of Business Administration (BBA) – Dual Major in Marketing &amp; MIS</div>
+          <div class="institution-name">North South University (NSU), Dhaka, Bangladesh</div>
+          <div style="font-size: 10px; color: var(--safr-blue); font-weight: 600;">Marketing Strategy, Information Systems Architecture, Consumer Behavior, Database Management</div>
+        </div>
+        <div class="tenure">2019 – 2026</div>
+      </div>
+      <div class="credential-row" style="margin-bottom: 2px;">
+        <div>
+          <div class="degree-name">Certified Supply Chain Analyst (CSCA)</div>
+          <div class="institution-name">ISCEA (International Supply Chain Education Alliance)</div>
+          <div style="font-size: 10px; color: var(--text-muted); font-weight: 600;">Quantitative budget forecasting, resource allocation, vendor contracts, process optimization</div>
+        </div>
+        <div class="tenure">2023</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-header">National Championships &amp; Elite Honors</h2>
+      <div class="trophy-grid">
+        <div class="trophy-card gold-flag">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-title">National Crisis Challenge</div>
+          <div class="trophy-host">JCI Dhaka Young | 2023</div>
+          <div class="trophy-desc" style="color: #b91c1c; font-weight: 600;">Ranked #1 in Bangladesh for high-stakes corporate PR crisis communication, strategic problem-solving &amp; executive composure.</div>
+        </div>
+
+        <div class="trophy-card gold-flag">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-title">National Supply Chain Competition</div>
+          <div class="trophy-host">CUET | 2025</div>
+          <div class="trophy-desc" style="color: var(--safr-blue); font-weight: 600;">Ranked #1 nationally in operational budgeting, timeline tracking, and complex stakeholder coordination.</div>
+        </div>
+
+        <div class="trophy-card gold-flag">
+          <span class="trophy-badge badge-champion">🏆 Champion</span>
+          <div class="trophy-title">Cennovation</div>
+          <div class="trophy-host">IUT | 2023</div>
+          <div class="trophy-desc">National championship in business innovation, brand positioning &amp; commercial strategy.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-runnerup">🥈 Global Finalist (70% Scholarship)</span>
+          <div class="trophy-title">ISCEA Global Supply Chain Olympiad</div>
+          <div class="trophy-host">ISCEA Global Round | 2023</div>
+          <div class="trophy-desc">Represented Bangladesh against top global university delegations in international supply chain strategy.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-runnerup">🥈 First Runner-Up</span>
+          <div class="trophy-title">Hult Prize</div>
+          <div class="trophy-host">UIU | 2023/2024</div>
+          <div class="trophy-desc">Prestigious global social entrepreneurship &amp; nationwide CSR impact initiative.</div>
+        </div>
+
+        <div class="trophy-card">
+          <span class="trophy-badge badge-runnerup">🏅 90% Scholarship Recipient</span>
+          <div class="trophy-name">UPSTREAM 2.0</div>
+          <div class="trophy-host">Dhaka University | 2022</div>
+          <div class="trophy-desc">Selected through meritocratic multi-round corporate case analytics and strategy.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
